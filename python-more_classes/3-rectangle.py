@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Define a Rectangle class with width, height, area, perimeter and print support."""
+"""Define a Rectangle class with width, height, area, perimeter and
+print support."""
 
 
 class Rectangle:
     """Represent a rectangle."""
-
 
     def __init__(self, width=0, height=0):
         """Initialize a Rectangle with optional width and height."""
@@ -50,7 +50,7 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string representation of the rectangle with '#' characters."""
+        """Return a string representation of the rectangle with '#' chars."""
         if self.__width == 0 or self.__height == 0:
             return ""
         rect_lines = ["#" * self.__width for _ in range(self.__height)]
