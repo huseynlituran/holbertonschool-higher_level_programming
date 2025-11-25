@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define a Rectangle class with all previous features and class method square."""
+"""Define a Rectangle class with all previous features and class method."""
 
 
 class Rectangle:
