@@ -1,0 +1,103 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+# Test 1: area() hələ də Exception atır
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+# Test 2: Valid integers
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("height", 1)
+
+# Test 3: String dəyər
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# Test 4: Sıfır dəyər
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+# Test 5: Mənfi dəyər
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+...
+ValueError: distance must be greater than 0
+
+# Test 6: Float dəyər
+>>> bg.integer_validator("average", 3.14)
+Traceback (most recent call last):
+...
+TypeError: average must be an integer
+
+# Test 7: None dəyər
+>>> bg.integer_validator("value", None)
+Traceback (most recent call last):
+...
+TypeError: value must be an integer
+
+# Test 8: Boolean True (bool int-dən irs alır!)
+>>> bg.integer_validator("flag", True)
+Traceback (most recent call last):
+...
+TypeError: flag must be an integer
+
+# Test 9: Boolean False
+>>> bg.integer_validator("flag", False)
+Traceback (most recent call last):
+...
+TypeError: flag must be an integer
+
+# Test 10: List
+>>> bg.integer_validator("numbers", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: numbers must be an integer
+
+# Test 11: Tuple
+>>> bg.integer_validator("point", (3, 4))
+Traceback (most recent call last):
+...
+TypeError: point must be an integer
+
+# Test 12: Dict
+>>> bg.integer_validator("data", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: data must be an integer
+
+# Test 13: Set
+>>> bg.integer_validator("unique", {1, 2, 3})
+Traceback (most recent call last):
+...
+TypeError: unique must be an integer
+
+# Test 14: Böyük müsbət ədəd
+>>> bg.integer_validator("big_number", 999999999)
+
+# Test 15: 1 (minimum valid)
+>>> bg.integer_validator("one", 1)
+
+# Test 16: Argumentsiz çağırış
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Test 17: Yalnız 1 argument
+>>> bg.integer_validator("test")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# Test 18: Çox argument
+>>> bg.integer_validator("a", 1, 2)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
