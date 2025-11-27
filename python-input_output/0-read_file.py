@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-def write_file(filename="", text=""):
-    """Fayla mətn yazır (overwrite) və yazılan simvol sayını qaytarır."""
-    with open(filename, 'w', encoding="utf-8") as f:
-        return f.write(text)
+"""
+Modulun docstring-i.
+"""
+
+
+def read_file(filename=""):
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
