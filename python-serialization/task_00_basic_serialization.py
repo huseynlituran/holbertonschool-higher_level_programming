@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-Bu modul Python lüğətini JSON faylına serializasiya etmək v�
-JSON faylını deserializasiya etmək funksiyalarını ehtiva edir.
+Module for basic serialization and deserialization operations.
 """
 import json
 
 
 def serialize_and_save_to_file(data, filename):
     """
-    Python lüğətini (data) götürür və onu verilən ada (filename) sa
-    JSON faylına yazır. Əgər fayl varsa, üzərinə yazır.
+    Serializes a Python dictionary to a JSON file.
+    Args:
+        data (dict): A Python Dictionary with data.
+        filename (str): The filename of the output JSON file.
     """
     with open(filename, 'w', encoding="utf-8") as f:
         json.dump(data, f)
@@ -17,8 +18,11 @@ def serialize_and_save_to_file(data, filename):
 
 def load_and_deserialize(filename):
     """
-    Verilən JSON faylını (filename) oxuyur və
-    Python lüğəti kimi geri qaytarır.
+    Loads and deserializes a JSON file to a Python dictionary.
+    Args:
+        filename (str): The filename of the input JSON file.
+    Returns:
+        dict: A Python Dictionary with the deserialized JSON data.
     """
     with open(filename, 'r', encoding="utf-8") as f:
         return json.load(f)
