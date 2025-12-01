@@ -1,32 +1,21 @@
-#!/usr/bin/python3
-"""
-A basic Flask application serving HTML templates with Jinja2.
-"""
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Home səhifəsi
 @app.route('/')
 def home():
-    """
-    Renders the home page.
-    """
     return render_template('index.html')
 
+# About səhifəsi
 @app.route('/about')
 def about():
-    """
-    Renders the about page.
-    """
     return render_template('about.html')
 
+# Contact səhifəsi
 @app.route('/contact')
 def contact():
-    """
-    Renders the contact page.
-    """
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    # Tətbiqi 5000-ci portda debug rejimində işə salırıq
     app.run(debug=True, port=5000)
